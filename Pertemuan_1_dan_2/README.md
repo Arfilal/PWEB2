@@ -1,6 +1,6 @@
-# Sistem Manajemen Mahasiswa dan DOSEN PHP
+# PHP OOP Pertemuan 1 dan 2
 
-## Ikhtisar
+## Deskripai Proyek
 Proyek ini Menerapkan Sistem Manajemen Mahasiswa dan Dosen sederhana dalam PHP. Ini mencakup kelas-kelas untuk mengelola data mahasiswa dan dosen.
 
 ## Fitur
