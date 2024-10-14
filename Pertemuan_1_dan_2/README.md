@@ -58,13 +58,4 @@ echo $Dosen1->tampilkanDosen();
 ```
 
 ## Contoh output
-```
-data mahasiswa awal
-Arfilal Faiznadi, 230302053, Teknik Informatika
-
-data mahasiswa update
-Arfilal Faiznadi, 238129567, Teknik Elektro
-
-data dosen
-Abda'u, 123456789, PWEB2
-```
+<img width="268" alt="image" src="https://github.com/user-attachments/assets/39b18931-7bc7-4320-ac6c-156e35c94cf5">
