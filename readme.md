@@ -136,4 +136,3 @@ Kode ini mendemonstrasikan konsep dasar OOP dalam PHP:
 - Metode: Fungsi-fungsi yang memanipulasi data objek.
 - Instansiasi objek: Pembuatan instance dari kelas.
 
-test
