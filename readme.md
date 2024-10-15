@@ -136,3 +136,172 @@ Kode ini mendemonstrasikan konsep dasar OOP dalam PHP:
 - Metode: Fungsi-fungsi yang memanipulasi data objek.
 - Instansiasi objek: Pembuatan instance dari kelas.
 
+# PHP OOP Pertemuan 3 dan 4
+
+Proyek ini mendemonstrasikan implementasi konsep-konsep utama Pemrograman Berorientasi Objek (OOP) menggunakan PHP. Kode ini mencakup pembuatan kelas, objek, encapsulation, inheritance, polymorphism, dan abstraction.
+
+## Daftar Isi
+1. [Struktur Proyek](#struktur-proyek)
+2. [Konsep OOP dan Implementasi](#konsep-oop-dan-implementasi)
+3. [Kode Sumber](#kode-sumber)
+4. [Hasil Output](#hasil-output)
+5. [Penjelasan Langkah-langkah](#penjelasan-langkah-langkah)
+
+## Struktur Proyek
+
+Proyek ini terdiri dari satu file PHP:
+
+- `jobsheet2.php`: File utama yang berisi implementasi konsep OOP.
+
+## Konsep OOP dan Implementasi
+
+1. **Membuat Class dan Object**
+   - Kelas `Mahasiswa` dan `Dosen` diimplementasikan.
+   - Objek dibuat dari kelas-kelas tersebut.
+
+2. **Encapsulation**
+   - Properti private dengan getter dan setter.
+
+3. **Inheritance**
+   - Kelas `Pengguna` sebagai kelas induk.
+   - Kelas `Dosen` mewarisi dari `Pengguna`.
+
+4. **Polymorphism**
+   - Metode `aksesFitur()` diimplementasikan berbeda di kelas `Mahasiswa` dan `Dosen`.
+
+5. **Abstraction**
+   - Kelas abstrak `Pengguna` dengan metode abstrak `aksesFitur()`.
+
+## Kode Sumber
+
+```php
+<?php
+
+// 1. Membuat Class dan Object
+class Mahasiswa {
+    private $nama;
+    private $nim;
+    private $jurusan;
+
+    public function __construct($nama, $nim, $jurusan) {
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+
+    public function tampilkanData() {
+        return "Nama: {$this->nama}, NIM: {$this->nim}, Jurusan: {$this->jurusan}";
+    }
+
+    // 2. Encapsulation: Getter dan Setter
+    public function getNama() {
+        return $this->nama;
+    }
+
+    public function setNama($nama) {
+        $this->nama = $nama;
+    }
+
+    // ... (getter dan setter lainnya)
+
+    // 4. Polymorphism
+    public function aksesFitur() {
+        return "Mahasiswa mengakses fitur pembelajaran online.";
+    }
+}
+
+// 3. Inheritance
+abstract class Pengguna {
+    protected $nama;
+
+    public function __construct($nama) {
+        $this->nama = $nama;
+    }
+
+    public function getNama() {
+        return $this->nama;
+    }
+
+    // 5. Abstraction
+    abstract public function aksesFitur();
+}
+
+class Dosen extends Pengguna {
+    private $mataKuliah;
+
+    public function __construct($nama, $mataKuliah) {
+        parent::__construct($nama);
+        $this->mataKuliah = $mataKuliah;
+    }
+
+    public function getMataKuliah() {
+        return $this->mataKuliah;
+    }
+
+    public function tampilkanData() {
+        return "Nama Dosen: {$this->nama}, Mata Kuliah: {$this->mataKuliah}";
+    }
+
+    // 4. Polymorphism
+    public function aksesFitur() {
+        return "Dosen mengakses fitur penilaian mahasiswa.";
+    }
+}
+
+// Penggunaan
+echo "1. Membuat Class dan Object:\n";
+$mahasiswa1 = new Mahasiswa("Budi Santoso", "12345", "Teknik Informatika");
+echo $mahasiswa1->tampilkanData() . "\n\n";
+
+echo "2. Encapsulation:\n";
+$mahasiswa1->setNama("Budi Prasetyo");
+echo "Nama baru: " . $mahasiswa1->getNama() . "\n\n";
+
+echo "3. Inheritance:\n";
+$dosen1 = new Dosen("Dr. Siti Aisyah", "Pemrograman Web");
+echo $dosen1->tampilkanData() . "\n\n";
+
+echo "4. Polymorphism:\n";
+echo "Mahasiswa: " . $mahasiswa1->aksesFitur() . "\n";
+echo "Dosen: " . $dosen1->aksesFitur() . "\n\n";
+
+echo "5. Abstraction:\n";
+$pengguna1 = $mahasiswa1;
+$pengguna2 = $dosen1;
+echo "Pengguna 1 (Mahasiswa): " . $pengguna1->aksesFitur() . "\n";
+echo "Pengguna 2 (Dosen): " . $pengguna2->aksesFitur() . "\n";
+```
+
+## Hasil Output
+
+
+<img src ="image/image2.png">;
+
+
+```
+
+## Penjelasan Langkah-langkah
+
+1. **Membuat Class dan Object**
+   - Kelas `Mahasiswa` dan `Dosen` didefinisikan dengan properti dan metode.
+   - Objek `$mahasiswa1` dibuat dari kelas `Mahasiswa`.
+
+2. **Encapsulation**
+   - Properti `$nama`, `$nim`, dan `$jurusan` di kelas `Mahasiswa` dibuat private.
+   - Getter dan setter diimplementasikan untuk mengakses dan memodifikasi properti.
+   - Contoh penggunaan: `$mahasiswa1->setNama("Budi Prasetyo")`.
+
+3. **Inheritance**
+   - Kelas abstrak `Pengguna` dibuat sebagai kelas dasar.
+   - Kelas `Dosen` mewarisi dari `Pengguna` menggunakan keyword `extends`.
+   - Konstruktor kelas anak memanggil konstruktor induk dengan `parent::__construct()`.
+
+4. **Polymorphism**
+   - Metode `aksesFitur()` diimplementasikan berbeda di `Mahasiswa` dan `Dosen`.
+   - Objek dari kedua kelas dapat memanggil metode yang sama dengan hasil berbeda.
+
+5. **Abstraction**
+   - Kelas `Pengguna` dibuat abstrak dengan metode abstrak `aksesFitur()`.
+   - Kelas turunan (`Dosen` dan `Mahasiswa`) harus mengimplementasikan metode abstrak ini.
+
+Kode ini mendemonstrasikan bagaimana konsep-konsep OOP dapat diimplementasikan dalam PHP, membuat struktur program yang lebih terorganisir dan mudah dipelihara.
