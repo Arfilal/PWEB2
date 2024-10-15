@@ -275,10 +275,9 @@ echo "Pengguna 2 (Dosen): " . $pengguna2->aksesFitur() . "\n";
 ## Hasil Output
 
 
-<img src ="image/image2.png">;
+<img src ="image/image2.png">
 
 
-```
 
 ## Penjelasan Langkah-langkah
 
@@ -410,8 +409,6 @@ abstract class Jurnal {
 ## Contoh Output
 
 ![Screenshot 2024-10-15 225241](https://github.com/user-attachments/assets/fe7dec64-408b-4b03-8b22-185556e4eccc)
-
-```
 
 ## Kesimpulan
 
