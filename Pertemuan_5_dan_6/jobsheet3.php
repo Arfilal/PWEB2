@@ -107,7 +107,7 @@ $jurnalDosen = new JurnalDosen("Penerapan AI dalam Pendidikan", $dosen1, "Teknol
 $jurnalMahasiswa = new JurnalMahasiswa("Analisis Dampak Pembelajaran Online", $mahasiswa1, $dosen1);
 
 echo $dosen1->getNama() . " - " . $dosen1->getRole() . "<br>";
-echo $mahasiswa1->getNama() .  " - " . $mahasiswa1->getRole() . "<br>";
+echo $mahasiswa1->getNama() . " - " . $mahasiswa1->getRole() . "<br>";
 echo $jurnalDosen->ajukanJurnal() . "<br>";
 echo $jurnalMahasiswa->ajukanJurnal() . "<br>";
 
