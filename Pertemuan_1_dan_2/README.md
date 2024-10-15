@@ -1,116 +1,66 @@
-# PHP OOP Pertemuan 1 dan 2
+# PHP OOP PERTEMUAN 1 dan 2
 
-## 1. Pembuatan Kelas
+Proyek ini merupakan implementasi sederhana sistem manajemen data mahasiswa dan dosen menggunakan PHP dengan pendekatan Pemrograman Berorientasi Objek (OOP).
 
-### 1.1 Kelas Mahasiswa
+## Deskripsi
 
-Kelas `Mahasiswa` didefinisikan dengan properti dan metode berikut:
+Sistem ini terdiri dari dua kelas utama: `Mahasiswa` dan `Dosen`. Setiap kelas memiliki properti dan metode yang memungkinkan pengelolaan data masing-masing entitas.
 
-#### Properti:
-- `$nama`: Nama mahasiswa
-- `$nim`: Nomor Induk Mahasiswa
-- `$jurusan`: Jurusan mahasiswa
+### Kelas Mahasiswa
 
-#### Metode:
-- `__construct()`: Metode konstruktor untuk menginisialisasi objek
-- `tampilkandata()`: Metode untuk menampilkan data mahasiswa
-- `updatejurusan()`: Metode untuk memperbarui jurusan mahasiswa
-- `setnim()`: Metode untuk mengatur NIM baru
+Kelas `Mahasiswa` memiliki properti:
+- nama
+- nim
+- jurusan
 
-### 1.2 Kelas Dosen
+Metode-metode dalam kelas `Mahasiswa`:
+- `__construct()`: Konstruktor untuk inisialisasi objek
+- `tampilkandata()`: Menampilkan data mahasiswa
+- `updatejurusan()`: Memperbarui jurusan mahasiswa
+- `setnim()`: Mengatur NIM baru untuk mahasiswa
 
-Kelas `Dosen` didefinisikan dengan properti dan metode berikut:
+### Kelas Dosen
 
-#### Properti:
-- `$nama`: Nama dosen
-- `$nip`: Nomor Induk Pegawai dosen
-- `$mataKuliah`: Mata kuliah yang diajar oleh dosen
+Kelas `Dosen` memiliki properti:
+- nama
+- nip
+- mataKuliah
 
-#### Metode:
-- `__construct()`: Metode konstruktor untuk menginisialisasi objek
-- `tampilkanDosen()`: Metode untuk menampilkan data dosen
+Metode dalam kelas `Dosen`:
+- `__construct()`: Konstruktor untuk inisialisasi objek
+- `tampilkanDosen()`: Menampilkan data dosen
 
-## 2. Penggunaan Metode dengan Komentar
+## Penggunaan
 
-### 2.1 Metode Kelas Mahasiswa
+Berikut adalah contoh penggunaan kelas-kelas tersebut:
 
 ```php
-class Mahasiswa {
-    public $nama;
-    public $nim;
-    public $jurusan;
-
-    // Konstruktor untuk menginisialisasi objek Mahasiswa
-    public function __construct($nama, $nim, $jurusan) {
-        $this->nama = $nama;
-        $this->nim = $nim;
-        $this->jurusan = $jurusan;
-    }
-
-    // Metode untuk menampilkan data mahasiswa
-    public function tampilkandata() {
-        return "$this->nama, $this->nim, $this->jurusan";
-    }
-
-    // Metode untuk memperbarui jurusan mahasiswa
-    public function updatejurusan($jurusan_baru) {
-        $this->jurusan = $jurusan_baru;
-    }
-
-    // Metode untuk mengatur NIM baru
-    public function setnim($nim) {
-        $this->nim = $nim;
-    }
-}
-
-// Membuat objek Mahasiswa dan menampilkan data awal
+// Membuat objek mahasiswa
 $mahasiswa1 = new Mahasiswa("Arfilal Faiznadi", "230302053", "Teknik Informatika");
-echo "Data mahasiswa awal: <br>";
-echo $mahasiswa1->tampilkandata() . "<br><br>";
 
-// Memperbarui data mahasiswa dan menampilkan data yang diperbarui
-echo "Data mahasiswa update: <br>";
+// Menampilkan data awal
+echo "Data mahasiswa awal:";
+echo $mahasiswa1->tampilkandata();
+
+// Memperbarui data
 $mahasiswa1->updatejurusan("Teknik Elektro");
 $mahasiswa1->setnim("238129567");
-echo $mahasiswa1->tampilkandata(). "<br><br>";
-```
 
-### 2.2 Metode Kelas Dosen
+// Menampilkan data yang diperbarui
+echo "Data mahasiswa setelah diperbarui:";
+echo $mahasiswa1->tampilkandata();
 
-```php
-class Dosen {
-    public $nama;
-    public $nip;
-    public $mataKuliah;
-
-    // Konstruktor untuk menginisialisasi objek Dosen
-    public function __construct($nama, $nip, $mataKuliah) {
-        $this->nama = $nama;
-        $this->nip = $nip;
-        $this->mataKuliah = $mataKuliah;
-    }
-
-    // Metode untuk menampilkan data dosen
-    public function tampilkanDosen() {
-        return "$this->nama, $this->nip, $this->mataKuliah";
-    }
-}
-
-// Membuat objek Dosen dan menampilkan datanya
-echo "Data dosen: <br>";
+// Membuat objek dosen
 $Dosen1 = new Dosen("Abda'u", "123456789", "PWEB2");
-echo $Dosen1->tampilkanDosen() . "<br>";
+
+// Menampilkan data dosen
+echo "Data dosen:";
+echo $Dosen1->tampilkanDosen();
 ```
 
-## 3. Hasil Output
+## Hasil Output
 
-Script ini akan menghasilkan output sebagai berikut:
+Setelah menjalankan kode di atas, output yang dihasilkan akan seperti ini:
 
-![Screenshot 2024-10-14 212826](https://github.com/user-attachments/assets/fa520ec0-81d6-4c11-8c4c-872f0bd8f0dc)
+![Screenshot 2024-10-14 212826](https://github.com/user-attachments/assets/255ba160-5b6c-48b7-a0d2-453e36f8aef7)
 
-```
-
-Output ini menunjukkan:
-1. Data awal mahasiswa
-2. Data mahasiswa yang telah diperbarui setelah mengubah jurusan dan NIM
-3. Data dosen
